@@ -18,7 +18,7 @@ spec:
           image: sudhinms/quiz-config-app:13
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 8888
           resources:
             requests:
               cpu: 100m
