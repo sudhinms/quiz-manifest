@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: config-service
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sudhinms/quiz-manifests.git
+    targetRevision: main
+    path: apps/config-service
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: quiz
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
