@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/sudhinms/quiz-manifests.git
+    repoURL: https://github.com/sudhinms/quiz-manifest.git
     targetRevision: main
     path: apps/config-service
   destination:
