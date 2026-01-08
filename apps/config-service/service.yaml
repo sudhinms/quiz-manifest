@@ -9,6 +9,6 @@ spec:
     app: config-service
   ports:
     - port: 80
-      targetPort: 9000
+      targetPort: 8888
 
 
