@@ -4,9 +4,12 @@ metadata:
   name: config-service
   namespace: quiz
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: config-service
   ports:
     - port: 80
       targetPort: 8888
+      nodePort: 30080
+
+
