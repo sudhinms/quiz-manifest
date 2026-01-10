@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: config-service
-          image: sudhinms/quiz-config-app:1b9928d
+          image: sudhinms/quiz-config-app:08b3dba
           imagePullPolicy: Always
           ports:
             - containerPort: 8880
