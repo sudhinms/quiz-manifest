@@ -1,18 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-service
+  name: postgres-db
   namespace: argocd
 spec:
   project: default
+
   source:
     repoURL: https://github.com/sudhinms/quiz-manifest.git
     targetRevision: main
-    path: apps/config-service
+    path: database/postgres
+
   destination:
     server: https://kubernetes.default.svc
-    namespace: quiz
+    namespace: database
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
