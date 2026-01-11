@@ -15,23 +15,17 @@ spec:
     spec:
       containers:
         - name: keycloak
-          image: quay.io/keycloak/keycloak:25.0.4
-          args:
-            - start
+          image: quay.io/keycloak/keycloak:26.0.5
+
+          command:
+            - /opt/keycloak/bin/kc.sh
+            - start-dev
+
+          ports:
+            - containerPort: 8080
+
           env:
-            - name: KC_DB
-              value: postgres
-            - name: KC_DB_URL
-              value: jdbc:postgresql://keycloak-postgres:5432/keycloak
-            - name: KC_DB_USERNAME
-              value: keycloak
-            - name: KC_DB_PASSWORD
-              value: keycloak
             - name: KEYCLOAK_ADMIN
               value: admin
             - name: KEYCLOAK_ADMIN_PASSWORD
               value: admin123
-            - name: KC_HOSTNAME_STRICT
-              value: "false"
-          ports:
-            - containerPort: 8080
